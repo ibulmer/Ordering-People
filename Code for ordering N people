@@ -1,0 +1,26 @@
+#First order N people in alphabetical order. Then order them randomly. 
+#If each person is within 1 postion of there original postion, we consider this to a success.
+#repeat this experiment trials times, and then divide this number by trials to find the probability of success.
+
+import random 
+count=0
+success=0
+n=4
+trials=1000000
+
+while count<trials:
+    y= random.sample(range(n),n)
+            
+       
+    print y
+    for i in range(0, len(y)):
+        if y[i]!=i-1 and y[i]!=i and y[i]!=i+1:
+            break
+    else:
+        success+=1    
+    count+=1	
+
+sucess=float(success)
+trials=float(trials)
+print "number of success is", success
+print "probability is", (success/trials)
